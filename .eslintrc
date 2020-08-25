@@ -1,0 +1,23 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "node": true,
+    "browser": true,
+    "jest/globals": true
+  },
+  "rules": {
+    "strict": 0,
+    "no-unused-vars": ["error", { "ignoreRestSiblings": true }],
+    "jest/consistent-test-it": ["error"]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:jest/recommended"
+  ],
+  "plugins": ["jest"]
+}

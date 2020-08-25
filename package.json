@@ -1,0 +1,98 @@
+{
+  "name": "elparking-lighthouse",
+  "version": "0.0.1",
+  "description": "ElParking Lighthouse testing utility",
+  "main": "./lib/index.js",
+  "author": "<antonio.juan@elparking.com>",
+  "license": "MIT",
+  "dependencies": {
+    "lighthouse": "^6.2.0",
+    "prompt-sync": "^4.2.0"
+  },
+  "bin": {
+    "lighthouse": "./lib/index.js"
+  },
+  "engines": {
+    "node": ">=10.13"
+  },
+  "scripts": {
+    "start": "node ./src/index.js",
+    "lint": "eslint . --max-warnings 0",
+    "test": "jest",
+    "test:watch": "yarn run test -- --watch",
+    "check": "yarn run lint && yarn run test",
+    "build": "babel src --out-dir lib",
+    "prepublish": "in-publish && yarn run build || :"
+  },
+  "files": [
+    "README.md",
+    "index.js",
+    "lib"
+  ],
+  "eslintConfig": {
+    "rules": {
+      "prefer-destructuring": "off"
+    },
+    "plugins": [
+      "jest",
+      "import"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "babel-preset-env"
+    ],
+    "plugins": [
+      [
+        "transform-runtime",
+        {
+          "polyfill": false,
+          "regenerator": true
+        }
+      ]
+    ]
+  },
+  "jest": {
+    "cache": false,
+    "testRegex": "[\\w+]\\.test\\.js$",
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "globals": {
+      "DEBUG": false
+    },
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint-plugin-jest": "^23.20.0",
+    "babel-cli": "^6.13.2",
+    "babel-core": "^6.13.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-runtime": "^6.26.0",
+    "eslint": "^6.1.0",
+    "in-publish": "^2.0.0",
+    "jest": "^20.0.4",
+    "prettier": "^1.17.1"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElParking/lighthouse.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ElParking/lighthouse/issues"
+  },
+  "homepage": "https://github.com/ElParking/lighthouse#readme",
+  "keywords": [
+    "Lighthouse-based",
+    "testing",
+    "repository"
+  ]
+}
