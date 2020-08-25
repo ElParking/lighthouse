@@ -1,5 +1,5 @@
 {
-  "name": "elparking-lighthouse",
+  "name": "@elparking/lighthouse",
   "version": "0.0.1",
   "description": "ElParking Lighthouse testing utility",
   "main": "./lib/index.js",
