@@ -187,10 +187,9 @@ async function main () {
     if (isDebuged()) {
         console.log(' Lighthouse audit info: ' + yellow('Debug mode'))
     }
-    
-    
+
     const host = getUrl()
-    
+
     if (!host) {
         console.log(' You must define the url')
         printHelp()
@@ -198,10 +197,8 @@ async function main () {
     } else {
         console.log(` Auditing ${yellow(host)}`)
     }
-    
-    
+
     let report
-    
     try {
         console.log(' Categories: ' + yellow(getCategories().join(', ')))
         console.log(' Running with variability of ' + yellow(getVariability() + '%'))
