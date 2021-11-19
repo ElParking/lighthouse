@@ -1,6 +1,6 @@
 {
   "name": "@elparking/lighthouse",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ElParking Lighthouse testing utility",
   "main": "./lib/index.js",
   "author": "<antonio.juan@elparking.com>",
