@@ -205,7 +205,13 @@ async function main () {
     try {
         console.log(' Categories: ' + yellow(getCategories().join(', ')))
         console.log(' Running with variability of ' + yellow(getVariability() + '%'))
-        const chrome = await chromeLauncher.launch({chromeFlags: ['--headless']})
+        const chrome = await chromeLauncher.launch({chromeFlags: [
+            '--headless',
+            '--no-sandbox',
+            '--disable-gpu',
+            '--allow-running-insecure-content',
+            '--ignore-certificate-errors'
+        ]})
         const options = { logLevel: 'silent', output: ['json', 'html'], onlyCategories: getCategories(), port: chrome.port }
         report = await lighthouse(host, options)
         await chrome.kill()
